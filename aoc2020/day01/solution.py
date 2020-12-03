@@ -14,6 +14,6 @@ def solve_part2(e):
 
 
 if __name__ == "__main__":  # pragma: no cover
-    entries = get_input_as_int("aoc2020/day01/day01.input")
+    entries = get_input_as_int("aoc2020/day01/input")
     print(solve_part1(entries))
     print(solve_part2(entries))

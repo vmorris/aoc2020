@@ -1,6 +1,6 @@
 import setuptools
 
-tests_dependencies = ["pytest"]
+tests_dependencies = ["pytest", "pytest_cov"]
 extras = {"test": tests_dependencies}
 
 setuptools.setup(

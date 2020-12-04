@@ -10,4 +10,4 @@ touch "${DAYDIR}/input"
 cp "newday/solution.py" ${DAYDIR}
 
 touch "tests/testinput.day${1}"
-cp "newday/test_day00.py" "tests/test_day${1}.py"
+cp "newday/_test_day00.py" "tests/test_day${1}.py"

@@ -25,3 +25,14 @@ def test_get_input_day04():
     ]
     actual = util.get_input_day04("tests/testinput.day04")
     assert actual == expected
+
+
+def test_binary_search():
+    data = list(range(128))
+    expected = 44
+    actual = util.binary_search(data, "FBFBBFF", "FB")
+    assert actual == expected
+    data = list(range(8))
+    expected = 4
+    actual = util.binary_search(data, "RLL", "LR")
+    assert actual == expected

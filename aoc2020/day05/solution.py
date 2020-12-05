@@ -1,7 +1,7 @@
 from aoc2020.util import get_input
 
 
-def decode_location(data, mapping):
+def _decode_location(data, mapping):
     """ We can simply map 0 and 1 to the characters in the location data
     and convert the binary to an integer to determine the value """
     trans = data.translate(str.maketrans(mapping, "01"))
@@ -10,20 +10,22 @@ def decode_location(data, mapping):
 
 def get_row(data):
     data = data[:7]
-    return decode_location(data, "FB")
+    return _decode_location(data, "FB")
 
 
 def get_column(data):
     data = data[7:]
-    return decode_location(data, "LR")
+    return _decode_location(data, "LR")
 
 
 def get_seat(data):
     return (get_row(data) * 8) + get_column(data)
 
 
-def get_max_seat():
-    return get_seat("BBBBBBBRRR")
+def get_max_seat(length_row, length_col):
+    row = "B" * length_row
+    col = "R" * length_col
+    return get_seat(f"{row}{col}")
 
 
 def get_highest_seat(entries):
@@ -36,7 +38,8 @@ def get_highest_seat(entries):
 
 
 def get_lowest_seat(entries):
-    lowest = get_max_seat()
+    entry_length = len(entries[0])
+    lowest = get_max_seat(7, 3)
     for entry in entries:
         seat = get_seat(entry)
         if seat < lowest:
@@ -51,7 +54,7 @@ def solve_part1(entries):
 def solve_part2(entries):
     low = get_lowest_seat(entries)
     high = get_highest_seat(entries)
-    seats_filled = [False for _ in range(get_max_seat())]
+    seats_filled = [False for _ in range(get_max_seat(7, 3))]
     for entry in entries:
         seats_filled[get_seat(entry)] = True
     for seat, filled in enumerate(seats_filled):

@@ -49,13 +49,13 @@ def solve_part1(entries):
 
 
 def solve_part2(entries):
-    max_filled = get_highest_seat(entries)
-    min_filled = get_lowest_seat(entries)
+    low = get_lowest_seat(entries)
+    high = get_highest_seat(entries)
     seats_filled = [False for _ in range(get_max_seat())]
     for entry in entries:
         seats_filled[get_seat(entry)] = True
     for seat, filled in enumerate(seats_filled):
-        if not filled and min_filled <= seat <= max_filled:
+        if not filled and low <= seat <= high:
             return seat
 
 

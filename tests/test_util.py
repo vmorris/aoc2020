@@ -36,3 +36,9 @@ def test_binary_search():
     expected = 4
     actual = util.binary_search(data, "RLL", "LR")
     assert actual == expected
+
+
+def test_get_input_nlnl_records():
+    expected = [["abc"], ["a", "b", "c"], ["ab", "ac"], ["a", "a", "a", "a"], ["b"]]
+    actual = util.get_input_nlnl_records("tests/testinput.day06")
+    assert actual == expected

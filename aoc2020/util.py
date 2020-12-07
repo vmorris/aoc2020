@@ -26,7 +26,7 @@ def binary_search(data, instructions, control):
     search direction is a specific control character.
     - `data` is a list to search
     - `instructions` is a string with control characters
-    - `control` is two characters, 
+    - `control` is two characters,
         indicating which direction to subdivide to continue the search
     """
     if len(control) != 2:

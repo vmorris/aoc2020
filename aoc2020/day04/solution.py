@@ -2,7 +2,7 @@ from aoc2020.util import get_input_day04
 
 
 def valid_byr(byr):
-    if byr == None:
+    if byr is None:
         return False
     return 1920 <= int(byr) <= 2002
 

@@ -1,5 +1,4 @@
 from aoc2020.day05 import solution
-from aoc2020.util import get_input
 
 
 input_data = ["FBFBBFFRLR", "BFFFBBFRRR", "FFFBBBFRRR", "BBFFBBFRLL"]

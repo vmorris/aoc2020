@@ -1,4 +1,4 @@
-from aoc2020.util import get_input, get_input_nlnl_records
+from aoc2020.util import get_input_nlnl_records
 
 
 def intersection_answers(answers):

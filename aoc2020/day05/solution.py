@@ -38,7 +38,6 @@ def get_highest_seat(entries):
 
 
 def get_lowest_seat(entries):
-    entry_length = len(entries[0])
     lowest = get_max_seat(7, 3)
     for entry in entries:
         seat = get_seat(entry)
@@ -66,4 +65,3 @@ if __name__ == "__main__":  # pragma: no cover
     entries = get_input("aoc2020/day05/input")
     print(solve_part1(entries))
     print(solve_part2(entries))
-

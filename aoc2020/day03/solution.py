@@ -39,4 +39,3 @@ if __name__ == "__main__":  # pragma: no cover
     array = get_input("aoc2020/day03/input")
     print(solve_part1(array))
     print(solve_part2(array))
-

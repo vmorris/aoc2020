@@ -33,4 +33,3 @@ if __name__ == "__main__":  # pragma: no cover
     entries = get_input("aoc2020/day02/input")
     print(solve_part1(entries))
     print(solve_part2(entries))
-

@@ -1,5 +1,3 @@
-from pkg_resources import require
-
 from aoc2020.util import get_input_day04
 
 
@@ -10,19 +8,19 @@ def valid_byr(byr):
 
 
 def valid_iyr(iyr):
-    if iyr == None:
+    if iyr is None:
         return False
     return 2010 <= int(iyr) <= 2020
 
 
 def valid_eyr(eyr):
-    if eyr == None:
+    if eyr is None:
         return False
     return 2020 <= int(eyr) <= 2030
 
 
 def valid_hgt(hgt):
-    if hgt == None:
+    if hgt is None:
         return False
     unit = hgt[-2:]
     height = hgt[:-2]
@@ -34,7 +32,7 @@ def valid_hgt(hgt):
 
 
 def valid_hcl(hcl):
-    if hcl == None:
+    if hcl is None:
         return False
     if hcl[0] != "#":
         return False
@@ -48,7 +46,7 @@ def valid_hcl(hcl):
 
 
 def valid_ecl(ecl):
-    if ecl == None:
+    if ecl is None:
         return False
     if ecl not in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]:
         return False
@@ -56,7 +54,7 @@ def valid_ecl(ecl):
 
 
 def valid_pid(pid):
-    if pid == None:
+    if pid is None:
         return False
     return len(pid) == 9
 

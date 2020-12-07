@@ -1,5 +1,7 @@
 # My solutions for Advent of Code 2020
 
+![Python package](https://github.com/vmorris/aoc2020/workflows/Python%20package/badge.svg)
+
 ## Setup
 
 After cloning this repository, create a virtual environment, activate it, and install.

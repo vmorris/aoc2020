@@ -3,7 +3,7 @@
 DAY="${1}"
 DAYDIR="aoc2020/day${DAY}"
 
-echo "from .day${1} import *" >> "aoc2020/__init__.py"
+#echo "from .day${1} import *" >> "aoc2020/__init__.py"
 
 mkdir "${DAYDIR}"
 touch "${DAYDIR}/input"

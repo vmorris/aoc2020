@@ -7,8 +7,6 @@ from aoc2020.util import get_input_as_int
 
 def find_first_invalid_number(numbers, preamble_length):
     preamble = numbers[:preamble_length]
-    print(f"preamble length = {preamble_length}")
-    print(f"preamble = {preamble}")
     i = preamble_length
     while i < len(numbers):
         to_check = numbers[i]

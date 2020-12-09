@@ -2,6 +2,7 @@ import itertools
 
 from anytree import Node, RenderTree
 from anytree.iterators.preorderiter import PreOrderIter
+from anytree.iterators.postorderiter import PostOrderIter
 
 from aoc2020.util import get_input
 
@@ -35,15 +36,6 @@ def build_part1_tree(node, all_bags):
         build_part1_tree(Node(child, parent=node), all_bags)
 
 
-def build_part2_tree(node, all_bags):
-    children = all_bags[node.name]
-    if children is None:
-        return
-    for child in children:
-        count, name = child.split(" ", 1)
-        build_part2_tree(Node(name, parent=node, count=int(count)), all_bags)
-
-
 def solve_part1(entries):
     all_bags = collect_bags(entries)
     shiny_gold_tree = Node("shiny gold")
@@ -56,12 +48,32 @@ def solve_part1(entries):
     return len(dedup)
 
 
+def build_part2_tree(node, all_bags):
+    children = all_bags[node.name]
+    if children is None:
+        return
+    for child in children:
+        count, name = child.split(" ", 1)
+        build_part2_tree(Node(name, parent=node, count=int(count)), all_bags)
+
+
+def my_traversal(node):
+    if not node.children:
+        return node.count
+    else:
+        result = 0
+        for children in node.children:
+            result += my_traversal(children)
+        result *= node.count
+        result += node.count
+    return result
+
+
 def solve_part2(entries):
     all_bags = collect_bags(entries)
-    shiny_gold_tree = Node("shiny gold")
+    shiny_gold_tree = Node("shiny gold", count=1)
     build_part2_tree(shiny_gold_tree, all_bags)
-    print(RenderTree(shiny_gold_tree))
-    return 2
+    return my_traversal(shiny_gold_tree) - 1
 
 
 if __name__ == "__main__":  # pragma: no cover

@@ -76,7 +76,7 @@ def solve_part2(entries):
         machine = Machine(change=i)
         machine.load_program(entries)
         result = machine.run()
-        if machine.running == False:
+        if not machine.running:
             return result
 
 

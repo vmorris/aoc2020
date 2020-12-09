@@ -1,8 +1,5 @@
-import itertools
-
-from anytree import Node, RenderTree
+from anytree import Node
 from anytree.iterators.preorderiter import PreOrderIter
-from anytree.iterators.postorderiter import PostOrderIter
 
 from aoc2020.util import get_input
 

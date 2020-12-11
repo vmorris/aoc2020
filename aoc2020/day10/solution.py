@@ -22,7 +22,7 @@ def solve_part1(adapters):
         elif rating - 3 == joltage:
             three_diffs += 1
         else:
-            raise Exception("How'd this happen??")
+            raise Exception("How'd this happen?")
         joltage = rating
     return one_diffs * three_diffs
 

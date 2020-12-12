@@ -267,10 +267,12 @@ def shift_seats(seats):
     new_seats = copy.copy(seats)
     for i, row in enumerate(seats):
         for j, seat in enumerate(row):
-            # if i == 0 and j == 0:
-            # import pdb
+            if i == 1 and j == 0:  # debugging the 2nd shift here
+                import pdb
 
-            # pdb.set_trace()
+                # TODO: southwest check is broken, northwest is broken
+
+                pdb.set_trace()
             if seat == "#":  # occupied
                 if count_adjacent_occupied(seats, i, j) >= 5:
                     new_seats[i] = (

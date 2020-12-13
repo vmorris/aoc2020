@@ -21,6 +21,15 @@ def get_input_day04(f):
     return [line.replace("\n", " ") for line in input]
 
 
+def get_input_day13(f):
+    result = []
+    input = open(f).read()
+    input = input.split("\n")
+    result.append(input[0])
+    result.append(input[1].split(","))
+    return result
+
+
 def binary_search(data, instructions, control):
     """ day05 has a few binary search problems where the
     search direction is a specific control character.

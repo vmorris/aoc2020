@@ -51,3 +51,10 @@ def binary_search(data, instructions, control):
     elif instructions[0] == control[1]:
         # last half
         return binary_search(data[half:], instructions[1:], control)
+
+
+def list_rindex(li, x):
+    for i in reversed(range(len(li))):
+        if li[i] == x:
+            return i
+    raise ValueError(f"{x} is not in the list.")

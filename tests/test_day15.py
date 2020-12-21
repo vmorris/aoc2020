@@ -14,8 +14,8 @@ def test_speak_number():
     actual = solution.speak_number(5, starting_numbers)
     assert 3 == actual
     actual = solution.speak_number(6, starting_numbers)
-    assert 3 == actual
-    actual = solution.speak_number(7, starting_numbers)
+    # assert 3 == actual
+    # actual = solution.speak_number(7, starting_numbers)
     # assert 1 == actual
     # actual = solution.speak_number(8, starting_numbers)
     # assert 0 == actual

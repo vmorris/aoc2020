@@ -48,3 +48,23 @@ def test_get_input_day13():
     expected = ["939", ["7", "13", "x", "x", "59", "x", "31", "19"]]
     actual = util.get_input_day13("tests/testinput.day13")
     assert actual == expected
+
+
+def test_get_input_day16():
+    expected_validators = {
+        "class": ("1-3", "5-7"),
+        "row": ("6-11", "33-44"),
+        "seat": ("13-40", "45-50"),
+    }
+    expected_ticket = ["7", "1", "14"]
+    expected_other_tickets = [
+        ["7", "3", "47"],
+        ["40", "4", "50"],
+        ["55", "2", "20"],
+        ["38", "6", "12"],
+    ]
+    validators, ticket, other_tickets = util.get_input_day16("tests/testinput.day16")
+    assert validators == expected_validators
+    assert ticket == expected_ticket
+    assert other_tickets == expected_other_tickets
+

@@ -30,6 +30,23 @@ def get_input_day13(f):
     return result
 
 
+def get_input_day16(f):
+    input = open(f).read()
+    validators, ticket, other_tickets = input.split("\n\n")
+    validators = validators.split("\n")
+    _validators = dict()
+    for validator in validators:
+        name, ranges = validator.split(": ")
+        range1, range2 = ranges.split(" or ")
+        _validators[name] = (range1, range2)
+    ticket = ticket.split(":")[1].strip().split(",")
+    other_tickets = other_tickets.split("\n")[1:]
+    _other_tickets = list()
+    for _other in other_tickets:
+        _other_tickets.append(_other.split(","))
+    return (_validators, ticket, _other_tickets)
+
+
 def binary_search(data, instructions, control):
     """ day05 has a few binary search problems where the
     search direction is a specific control character.
